@@ -1,0 +1,12 @@
+<h1>Show every recipes</h1>
+<h3><%= @recipes.name %></h3>
+	<ul>
+		<li>Preparation:
+			<br>
+			<%= @recipes.preparation %></li>
+		</br>
+	</ul>
+
+<p>
+	<%= link_to 'Back to list of recipes', recipes_path %>
+</p>

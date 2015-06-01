@@ -1,0 +1,16 @@
+<h1> Index - The recipes</h1>
+<p>
+	<%= link_to 'Back home', '/' %>
+</p>
+<ul>
+	<% @recipes.each do |recipe| %>
+		<li><%= link_to (recipe.name), recipe_path(recipe) %>
+			<% if recipe.name.present? %>
+						
+			<% end %>
+		</li>
+	<% end %>
+</ul>
+<p>
+	<%= link_to 'New recipe', new_recipe_path %>
+</p>
