@@ -3,7 +3,7 @@ class CreateFoods < ActiveRecord::Migration
     create_table :foods do |t|
 
     	t.string :name
-    	t.integer :existing_amount
+    	t.string :existing_amount
 	
       t.timestamps null: false
 

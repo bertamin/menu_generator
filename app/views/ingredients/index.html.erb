@@ -1,1 +1,26 @@
 <h1> Index - The ingredients</h1>
+<h3><%= @recipe.name %></h3>
+
+<ul>
+	<% @ingredients.each do |ingredient| %>
+		
+		<li>
+			Nombre del alimento:
+			<% food = Food.find ingredient.food_id %>
+			<%= food.name %>
+	<br>
+	<ul>	
+		<li type="square">
+			Cantidad necesaria: 
+			<%= ingredient.necessary_amount %>
+		</li>
+	</ul>
+	</li>
+	</br>
+	<% end %>
+
+</ul>
+
+<p>
+	<%= link_to 'Back Home', recipes_path %>
+</p>

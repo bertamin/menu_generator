@@ -1,4 +1,12 @@
 <h1> Index - The recipes</h1>
+<%= form_tag(search_recipes_path, method: 'get') do %>
+	<p>
+	   <%= text_field_tag :search, params[:search] %>
+	   <%= submit_tag 'Search' %>
+	</p>
+<% end %>
+
+
 <p>
 	<%= link_to 'Back home', '/' %>
 </p>

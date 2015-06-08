@@ -5,4 +5,11 @@ class Recipe < ActiveRecord::Base
 	def self.every_recipes
 		@recipes = Recipe.all
 	end
+
+	def self.search_recipes recipe_to_search		        
+		query = "name LIKE '%" + recipe_to_search + "%'"
+        where(query)
+    end
+
+	
 end

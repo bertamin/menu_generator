@@ -1,0 +1,23 @@
+<h1>New - Ingredients</h1>
+<%= form_for [@recipe, @ingredient] do |f| %>
+	<h3>Receta: <%= @recipe.name %></h3>
+	<tr>
+		<!--Nombre del ingrediente-->
+		<td><%= f.label :food_id %></td>
+		<td><%= f.text_field :food_id %></td>
+	</tr>
+	<br>
+	<tr>
+		<!--Cantidad necesaria-->
+		<td><%= f.label :necessary_amount %></td>
+		<td><%= f.text_field :necessary_amount %></td>
+	</tr>
+	<br>
+	<tr>
+		<td>&nbsp;</td>
+		<td><%= f.submit 'Save' %></td>
+	</tr>
+<% end %>
+<p>
+	<%= link_to 'Back Home', recipes_path %>
+</p>

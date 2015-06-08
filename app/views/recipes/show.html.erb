@@ -1,11 +1,19 @@
 <h1>Show every recipes</h1>
 <h3><%= @recipes.name %></h3>
+<h5>Category: <%= @recipes.category %></h5>
+
+<%= link_to 'Lista de ingredientes', recipe_ingredients_path(@recipes) %>
 	<ul>
-		<li>Preparation:
+		<li>Preparación:
 			<br>
 			<%= @recipes.preparation %></li>
 		</br>
 	</ul>
+
+
+<p>
+	<%= link_to 'Añadir ingredientes para esta receta', new_recipe_ingredient_path(@recipes) %>
+</p>
 
 <p>
 	<%= link_to 'Back to list of recipes', recipes_path %>

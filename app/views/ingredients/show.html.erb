@@ -1,0 +1,10 @@
+<h4><%= @recipe.name %></h4>
+<h4></h4>
+
+<%= @food.name %>
+<% @ingredients.each do |ingredient| %>
+
+	Cantidad necesaria: 
+			<%= ingredient.necessary_amount %>
+
+			<% end %>

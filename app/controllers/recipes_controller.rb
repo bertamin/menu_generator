@@ -3,6 +3,11 @@ class RecipesController < ApplicationController
 		@recipes = Recipe.every_recipes
 	end
 
+	def search_recipes
+		@recipes = Recipe.search_recipes params[:search]	
+		render 'index'	
+	end
+
 	def show
 		begin 
 			@recipes = Recipe.find params[:id]
@@ -14,6 +19,7 @@ class RecipesController < ApplicationController
 	def new
 		@recipe = Recipe.new
 	end
+
 	def create
 		@recipe = Recipe.new recipe_params
 		if @recipe.save
