@@ -3,9 +3,14 @@ class FoodsController < ApplicationController
 		@foods = Food.every_foods
 	end
 
+	def search_foods
+		@foods = Food.search_foods params[:search]	
+		render 'index'	
+	end
+
 	def show
 		begin 
-			@foods = Food.find params[:id]
+			@food = Food.find params[:id]
 		rescue ActiveRecord::RecordNotFound
 			render 'no_foods_found', layout: 'admin'
 		end
@@ -25,6 +30,11 @@ class FoodsController < ApplicationController
 		else
 			render 'new'
 		end	
+	end
+
+	def food_subtracts
+		@difference_food = Food.find params[:id]
+		render 'show'
 	end
 
 	private

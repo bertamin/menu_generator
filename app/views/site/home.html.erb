@@ -1,7 +1,47 @@
-<h1> MENU GENERATOR</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="style_home.css">
+        <title>Menu Generator</title>
+    </head>
 
+    <body>
+	
+				
+<div class="container containerfirst">
+          <div class="row rowfirst">
+            <div id="columnas" class="col-md-12 col-xs-12">
+              <%= link_to 'http://ironhack.com/es/' do %>
+                <%= image_tag "home/logo_def_web.png" %>
+                <% end %>
+            </div>
+          </div>
+            <div class="row rowsecond">
+                <div id="columnas" class="col-md-6 col-xs-6 principal">
+                    <section>
+                    	<div class="opacidad">
+						            <%= link_to foods_path do %>
+							           <%= image_tag "home/alimentos.jpg",  :title => 'Alimentos', :class => 'imghome' %><br>
+							             Mostrar alimentos
+							          <% end %>
+						          </div>
+				        </div>
+				        <div id="columnas" class="col-md-6 col-xs-6 principal">
+					             <div class="opacidad">
+					               <%= link_to recipes_path do %>
+							             <%= image_tag "home/recetas.jpg", :title => 'Recetas', :class => 'imghome' %><br>
+							               Mostrar recetas
+							           <% end %>
+					             </div>
+                </div>  
+					         </section>
 
-<%= link_to 'Show foods', foods_path %>
-<br>
-<%= link_to 'Show recipes', recipes_path %>
+				</div>
+				
+			</div>
+		</div>
 
+    
+	</body>
+</html>

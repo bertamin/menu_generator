@@ -10,7 +10,10 @@ class RecipesController < ApplicationController
 
 	def show
 		begin 
-			@recipes = Recipe.find params[:id]
+			@recipe = Recipe.find params[:id]
+
+			#llamada a la variable de ingredientes para mostrar su contenido
+			@ingredients = @recipe.ingredients 
 		rescue ActiveRecord::RecordNotFound
 			render 'no_recipes_found', layout: 'admin'
 		end
@@ -32,11 +35,22 @@ class RecipesController < ApplicationController
 			render 'new'
 		end	
 	end
+	def category
+		category_param = params[:category]
+		@recipes = Recipe.recipe_category category_param
+	
+		render 'index'
+	end
+
+	def recipes_subtracts
+		@difference_food = Recipe.find params[:id]
+		render 'show'
+	end
 
 	private
 	#este metodo es necesario para que al crear un objeto se autorice su creacion porque si no podrian meternos codigo malicioso
 	def recipe_params
-		params.require(:recipe).permit(:name, :preparation)
+		params.require(:recipe).permit(:name, :preparation, :category)
 		
 	end
 end

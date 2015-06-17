@@ -10,6 +10,10 @@ class Recipe < ActiveRecord::Base
 		query = "name LIKE '%" + recipe_to_search + "%'"
         where(query)
     end
+    
+    def self.recipe_category category
+    	where(:category => category)
+    end
 
 	
 end

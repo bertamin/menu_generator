@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>MenuGenerator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style_general.css">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -9,6 +11,13 @@
 <body>
 
 <%= yield %>
+
+<footer>
+		<hr>
+		Created by Berta Minguela ® Ironhack 2015
+</footer>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </body>
 </html>

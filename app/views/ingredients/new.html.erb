@@ -1,23 +1,46 @@
-<h1>New - Ingredients</h1>
-<%= form_for [@recipe, @ingredient] do |f| %>
-	<h3>Receta: <%= @recipe.name %></h3>
-	<tr>
-		<!--Nombre del ingrediente-->
-		<td><%= f.label :food_id %></td>
-		<td><%= f.text_field :food_id %></td>
-	</tr>
-	<br>
-	<tr>
-		<!--Cantidad necesaria-->
-		<td><%= f.label :necessary_amount %></td>
-		<td><%= f.text_field :necessary_amount %></td>
-	</tr>
-	<br>
-	<tr>
-		<td>&nbsp;</td>
-		<td><%= f.submit 'Save' %></td>
-	</tr>
-<% end %>
-<p>
-	<%= link_to 'Back Home', recipes_path %>
-</p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="menu_style.css">
+        <title>Menu Generator</title>
+    </head>
+
+    <body>
+    	<div class="container containerfirst">
+          <div class="row rowfirst">
+            <div id="columnas" class="col-md-12 col-xs-12 form_new">
+				<fieldset>
+					<legend>Añadir ingredientes a la receta</legend>
+					<%= form_for [@recipe, @ingredient] do |f| %>
+						<p class="nombres_recipes">Receta: <%= @recipe.name %></p>
+						<div class="campos">
+							<!--Nombre del ingrediente-->
+							<%= f.label :food_id %>
+							<%= f.text_field :food_id %>
+						</div>
+
+						<div class="campos">
+							<!--Cantidad necesaria-->
+							<%= f.label :necessary_amount %>
+							<%= f.text_field :necessary_amount %>
+						</div>
+
+						<div class="campos">
+							<!--Unidad de medida-->
+							<%= f.label :Unidad_de_medida %>
+							<%= f.text_field :necessary_amount %>
+						</div>
+							
+							<%= f.submit 'Guardar' %>
+						
+					<% end %>
+					<!--<p>
+						<%= link_to 'Back Home', recipes_path %>
+					</p>-->
+					</fieldset>
+			</div>
+		</div>
+</div>
+</body>
+</html>

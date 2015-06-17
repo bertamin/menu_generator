@@ -1,16 +1,16 @@
 class IngredientsController < ApplicationController
 	def index
 		@recipe = Recipe.find params[:recipe_id]
-		@ingredients = @recipe.ingredients
+		@ingredients = @recipe.ingredients 
 	end
-
+=begin
 	def show
 		@recipe = Recipe.find params[:recipe_id]
 		@ingredients = @recipe.ingredients
 		#@food = Food.find params[:id]
 		#@foods = Food.find(ingredient.food_id)
 	end
-
+=end
 	def new
 		@recipe = Recipe.find params[:recipe_id]
 		@ingredient = @recipe.ingredients.new

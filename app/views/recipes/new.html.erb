@@ -1,22 +1,44 @@
-<h1>New - Recipes</h1>
-<%= form_for @recipe do |f| %>
-	<tr>
-		<td><%= f.label :name  %></td>
-		<td><%=  f.text_field :name %></td>
-	</tr>
-	<br>
-	<tr>
-		<td><%= f.label :preparation %></td>
-		<td><%= f.text_field :preparation %></td>
-	</tr>
-	<br>
-	<tr>
-		<td><%= f.label :category %></td>
-		<td><%= f.text_field :category %></td>
-	</tr>
-	<br>
-	<tr>
-		<td>&nbsp;</td>
-		<td><%= f.submit 'Save' %></td>
-	</tr>
-<% end %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="menu_style.css">
+        <title>Menu Generator</title>
+    </head>
+
+    <body>
+<div class="container containerfirst">
+          <div class="row rowfirst">
+            <div id="columnas" class="col-md-12 col-xs-12 form_new">
+				<fieldset>
+					<legend>Nueva Receta</legend>
+					
+					<%= form_for @recipe do |f| %>
+					<div class="campos">
+						<!--Nombre de la receta-->
+						<%= f.label :Nombre %>
+						<%=  f.text_field :name, :size => 30, :placeholder => "Nombre de la receta" %>
+					</div>
+
+					<div class="campos">
+						<!--Categoria a la que pertenece la receta-->
+						<%= f.label :Categoria %>
+						<%= f.select :category, options_for_select(["Primeros", "Segundos", "Postres"]), {:id => "select1"} %>
+					</div>
+
+					<div class="campos">
+						<!--Preparacion-->
+						<%= f.label :Preparación %>
+						<br>
+						<%= f.text_area :preparation, size: '40x5', :placeholder => "Preparación de la receta..." %>
+					</div>
+					<div class="boton">
+							<%= f.submit 'Guardar' %>
+					</div>
+					<% end %>
+				</fieldset>
+			</div>
+		</div>
+</div>
+</body>
+</html>

@@ -1,17 +1,41 @@
-<h1>New - Foods</h1>
-<%= form_for @food do |f| %>
-	<tr>
-		<td><%= f.label :name  %></td>
-		<td><%=  f.text_field :name %></td>
-	</tr>
-	<br>
-	<tr>
-		<td><%= f.label :existing_amount %></td>
-		<td><%= f.text_field :existing_amount %></td>
-	</tr>
-	<br>
-	<tr>
-		<td>&nbsp;</td>
-		<td><%= f.submit 'Save' %></td>
-	</tr>
-<% end %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="menu_style.css">
+        <title>Menu Generator</title>
+    </head>
+
+    <body>
+<div class="container containerfirst">
+          <div class="row rowfirst">
+            <div id="columnas" class="col-md-12 col-xs-12 form_new">
+				<fieldset>
+					<legend>Nuevo Alimento</legend>
+					<%= form_for @food do |f| %>
+					<div class="campos">
+						<!--Nombre del ingrediente-->
+						<%= f.label :Nombre  %>
+						<%=  f.text_field :name, :placeholder => "Nombre alimento" %>
+					</div>
+						
+					<div class="campos">
+						<!--Cantidad necesaria-->
+						<%= f.label :Cantidad_existente %>
+						<%= f.text_field :existing_amount, :placeholder => "Cantidad existente" %>
+					</div>
+
+					<div class="campos">
+						<!--Unidad de medida-->
+						<%= f.label :Unidad_de_medida %>
+						<%= f.text_field :unit_of_measure, :placeholder => "kg, gr, l" %>
+					</div>
+
+						<%= f.submit 'Guardar' %>
+					<% end %>
+				</fieldset>
+			</div>
+		</div>
+</div>
+</body>
+</html>

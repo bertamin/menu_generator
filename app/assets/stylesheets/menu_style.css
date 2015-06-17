@@ -1,0 +1,153 @@
+body{
+margin-left: 1px;	
+}
+.barra{
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100%;
+}
+.borde_barra{
+	border-radius: 15px;
+}
+.titulo{font-family: "Vivaldi";
+font-size: 35px;
+font-weight: bold;
+color: #402a12;}
+
+header{
+	width: 98%;
+	font-size: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-weight: lighter;
+}
+.principal{margin-top: -55px;}
+
+#columnas{
+	font-size: 20px;
+	text-align: center;
+}
+
+.img_foods{width: 100px;
+			margin-bottom: 11px;
+			border-radius: 50%;
+}
+
+.zoom_f{
+		transition: 1.5s ease;
+ 		-moz-transition: 1.5s ease; /* Firefox */
+ 		-webkit-transition: 1.5s ease; /* Chrome - Safari */
+ 		-o-transition: 1.5s ease; /* Opera */
+}
+.zoom_f:hover{
+		transform : scale(1);
+		-moz-transform : scale(1); /* Firefox */
+		-webkit-transform : scale(1); /* Chrome - Safari */
+		-o-transform : scale(1); /* Opera */
+		-ms-transform : scale(1); /* IE9 */
+}
+
+.img_recipes{width: 180px;
+			margin-top: 25px;
+			margin-bottom: 27px;
+			border-radius: 10%;
+}
+
+.zoom_r{
+		transition: 1.5s ease;
+ 		-moz-transition: 1.5s ease; /* Firefox */
+ 		-webkit-transition: 1.5s ease; /* Chrome - Safari */
+ 		-o-transition: 1.5s ease; /* Opera */
+}
+.zoom_r:hover{
+		transform : scale(1.2);
+		-moz-transform : scale(1.2); /* Firefox */
+		-webkit-transform : scale(1.2); /* Chrome - Safari */
+		-o-transform : scale(1.2); /* Opera */
+		-ms-transform : scale(1.2); /* IE9 */
+}
+
+.breadcrumb{background-color: white;
+			margin-left: 50px}
+
+.nombres_food{font-size: 40px;
+		font-weight: lighter;
+		font-family: 'Lora', serif;
+		font-style: italic;
+		text-indent: -100px;
+		margin-left: 70px;}
+
+.propiedades_food{font-size: 20px;
+			font-family: 'Bree Serif', serif;
+			margin-left: 70px;}
+
+.img_foods_show{width:200px;
+	border-radius: 10%;
+	margin-left: 70px;}
+
+.nombres_recipes{font-size: 40px;
+		font-weight: lighter;
+		font-family: 'Lora', serif;
+		font-style: italic;		
+}
+
+.formato_propiedades_recipes{font-size: 18px;
+			font-family: 'Bree Serif', serif;
+			text-align: left;
+			margin-left: 70px;
+			font-weight: bold;
+
+}
+.agrupar_propiedades{margin-left: 10px;}
+
+.contenido_propiedades_recipes{font-size: 16px;
+			font-family: 'Bree Serif', serif;
+			text-indent: -380px;
+			font-weight: normal;
+}
+.texto_preparacion{text-align: justify;
+			font-size: 16px;
+			font-family: 'Bree Serif', serif;
+			margin-left: 62px;
+}
+
+.img_recipes_show{margin-top: 50px;
+	width:300px;
+	border-radius: 10%;
+	margin-left: 50px;}
+
+.rowfirst{
+	margin-top: 20px;
+}
+
+#category{
+	font-weight: bold;
+}
+
+.form_new{margin-top: 50px;
+}
+
+.campos{text-align: left;
+	margin-left: 350px;
+	padding: 2px;}
+
+.boton{text-align: right;
+margin-right: 365px;}
+
+.zoom_r{
+		transition: 1.5s ease;
+ 		-moz-transition: 1.5s ease; /* Firefox */
+ 		-webkit-transition: 1.5s ease; /* Chrome - Safari */
+ 		-o-transition: 1.5s ease; /* Opera */
+}
+.zoom_f:hover{
+		transform : scale(1.2);
+		-moz-transform : scale(1.2); /* Firefox */
+		-webkit-transform : scale(1.2); /* Chrome - Safari */
+		-o-transform : scale(1.2); /* Opera */
+		-ms-transform : scale(1.2); /* IE9 */
+}
+
+.add_ingredients{margin-top: 18px;
+				text-align: center;}
