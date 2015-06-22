@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="menu_style.css">
-        <title>Menu Generator</title>
-    </head>
-
-    <body>
-	<div class="container-fluid barra">
+<div class="container-fluid barra">
     	<nav class="navbar navbar-default borde_barra">
   	
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -71,18 +62,23 @@
             <div id="columnas" class="col-md-7 col-xs-7">
 				<p class="nombres_recipes"><%= @recipe.name %></p>
         <div class="agrupar_propiedades">
-          <div class="formato_propiedades_recipes">Personas: <span class="contenido_propiedades_recipes"><%= @recipe.number_of_people %></span></div>
-         
-				<p class="formato_propiedades_recipes">Tiempo de preparación: <%= @recipe.preparation_time %></p>
-        
-        <p class="formato_propiedades_recipes">Tiempo de cocinado: <%= @recipe.cooking_time %></p>
-        <p class="formato_propiedades_recipes">Dificultad: <%= @recipe.difficulty %></p>
-        <p class="formato_propiedades_recipes">Categoria: <%= @recipe.category %></p>
 
-				<p class="formato_propiedades_recipes">Ingredientes:</p>
+        
+         
+        <div class="formato_propiedades_recipes">Categoria: <span class="contenido_propiedades_recipes"><%= @recipe.category %></span></div>
+
+				<div class="formato_propiedades_recipes">Tiempo de preparación: <span class="contenido_propiedades_recipes"><%= @recipe.preparation_time %></span></div>
+        
+        <div class="formato_propiedades_recipes">Tiempo de cocinado: <span class="contenido_propiedades_recipes"><%= @recipe.cooking_time %></span></div>
+
+        <div class="formato_propiedades_recipes">Número de raciones: <span class="contenido_propiedades_recipes"><%= @recipe.number_of_people %></span></div>
+
+        <div class="formato_propiedades_recipes">Dificultad: <span class="contenido_propiedades_recipes"><%= @recipe.difficulty %></span></div>
+
+				<div class="formato_propiedades_recipes">Ingredientes:</div>
 				<ul>
 					<% @ingredients.each do |ingredient| %>
-						<li class="contenido_propiedades_recipes" type="none">
+						<li class="contenido_propiedades_recipes lista_ingredientes" type="none">
 							<%= ingredient.necessary_amount %> 
               <%= ingredient.unit_of_measure %>
 							<% food = Food.find ingredient.food_id %>
@@ -102,15 +98,12 @@
 
 
 					   <%= image_tag @recipe.image, :class => 'img_recipes_show' %>
-             
-        
-            <div class="add_ingredients"> 
-              <%= link_to 'Añadir ingredientes a esta receta', new_recipe_ingredient_path(@recipe) %>
+
+            <div class="navbar-form navbar-right add_ingredients">  
+              <button type="button" class="btn btn-default btn-md color_boton">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <%= link_to 'Añadir ingredientes', new_recipe_ingredient_path(@recipe) %> 
+              </button>
             </div>
+
 		</div>
 </div>
-
-
-
-</body>
-</html>

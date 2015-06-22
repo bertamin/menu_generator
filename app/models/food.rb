@@ -12,11 +12,7 @@ class Food < ActiveRecord::Base
     end
 
     def food_subtracts
-    	difference = (@difference_food - Ingredients.necessary_amount)
-    	if difference < Foods.existing_amount
-    		print "No puede realizar la receta por falta de ingredientes"
-    	else
-    	end
+    	
 
     end
 end

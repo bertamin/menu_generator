@@ -21,10 +21,14 @@ class RecipesController < ApplicationController
 
 	def new
 		@recipe = Recipe.new
+		@ingredients = Ingredient.all
 	end
 
 	def create
 		@recipe = Recipe.new recipe_params
+		@recipe = Recipe.find params[:id]
+		@food = Food.find_by_name(name)
+		@ingredient = @recipe.ingredients.new(food_id, necessary_amount, unit_of_measure)
 		if @recipe.save
 			flash[:notice] = "Recipe created sucesfully"
 			flash[:alert] = "Recipe is not created correctly"
@@ -41,16 +45,19 @@ class RecipesController < ApplicationController
 	
 		render 'index'
 	end
-
-	def recipes_subtracts
+	
+=begin
+	def subtracts_foods
 		@difference_food = Recipe.find params[:id]
+		@ingredients = @recipe.ingredients
 		render 'show'
 	end
+=end
 
 	private
 	#este metodo es necesario para que al crear un objeto se autorice su creacion porque si no podrian meternos codigo malicioso
 	def recipe_params
-		params.require(:recipe).permit(:name, :preparation, :category)
+		params.require(:recipe).permit(:name, :preparation, :category, :number_of_people, :difficulty, :preparation_time, :cooking_time, :image)
 		
 	end
 end

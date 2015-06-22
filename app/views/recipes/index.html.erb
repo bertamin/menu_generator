@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="menu_style.css">
-        <title>Menu Generator</title>
-    </head>
-
-    <body>
-	<div class="container-fluid barra">
+<div class="container-fluid barra">
     	<nav class="navbar navbar-default borde_barra">
   	
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -67,23 +58,25 @@
 </p>
 -->
 
-<div class="container containerfirst">
+<div class="container-fluid containerfirst">
           <div class="row rowfirst">
-          	<div id="columnas" class="col-md-2 col-xs-2">
+          	<div id="columnas" class="col-md-2 col-xs-2 margen_lista sombra">
           		<div class="list-group">
                 <a href="#" id="category" class="list-group-item disabled">Categorias</a>
 				  <a href="/recipes/category?category=Primeros" class="list-group-item">Primeros</a>
 				  <a href="/recipes/category?category=Segundos" class="list-group-item">Segundos</a>
 				  <a href="/recipes/category?category=Postres" class="list-group-item">Postres</a>
-				</div>
-          	</div>
+				    </div> <!--div list-group-->
+          	</div> <!--col-md-2 col-xs-2-->
+
+
             <div id="columnas" class="col-md-10 col-xs-10">
 				<ul>
 					<% @recipes.each do |recipe| %>
 						<li class="col-md-5 col-xs-5" type="none">
-              <div id="columnas" class=" zoom_r">
+              <div id="columnas">
                 <%= link_to recipe_path(recipe) do %>
-							   <%= image_tag recipe.image, :class => 'img_recipes zoom_r' %>
+							   <%= image_tag recipe.image, :class => 'img_recipes' %>
                  <% end %>
               </div>
              
@@ -105,5 +98,4 @@
 	<%= link_to 'New recipe', new_recipe_path %>
 </p>
 -->
-</body>
-</html>
+

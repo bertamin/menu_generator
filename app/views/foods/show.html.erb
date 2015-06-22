@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="menu_style.css">
-        <title>Menu Generator</title>
-    </head>
-
-    <body>
-	<div class="container-fluid barra">
+<div class="container-fluid barra">
     	<nav class="navbar navbar-default borde_barra">
   	
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,10 +49,10 @@
           <div class="row rowfirst">
             <div id="columnas" class="col-md-6 col-xs-6">
             <p class="nombres_food"><%= @food.name %></p>
-					<ul>
-						<li class="propiedades_food" type="none">Cantidad existente:
-							<%= @food.existing_amount %> <%= @food.unit_of_measure %></li>
-					</ul>
+
+					 <div class="propiedades_food">Cantidad existente:
+							<span class="contenido_propiedades_food"><%= @food.existing_amount %> <%= @food.unit_of_measure %></span>
+					</div>
 			</div>
       
 			   <%= image_tag @food.image, :class => 'img_foods_show' %>
@@ -73,6 +64,3 @@
 	<%= link_to 'Back to list food', foods_path %>
 </p>
 -->
-
-</body>
-</html>

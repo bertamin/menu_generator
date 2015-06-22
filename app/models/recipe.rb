@@ -14,6 +14,16 @@ class Recipe < ActiveRecord::Base
     def self.recipe_category category
     	where(:category => category)
     end
-
-	
+    
+=begin
+	def subtracts_foods
+		@difference_food = Recipe.find params[:id]
+		@ingredients = @recipe.ingredients
+		deduct_food = Food.existing_amount - Ingredient.necessary_amount
+		if deduct_food < existing_amount
+			print "No puedes realizar la receta por falta de ingredientes."
+		else 
+		end
+	end
+=end
 end
