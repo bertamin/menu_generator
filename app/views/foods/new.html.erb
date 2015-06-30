@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="menu_style.css">
-        <title>Menu Generator</title>
-    </head>
 
-    <body>
 <div class="container containerfirst">
           <div class="row rowfirst">
             <div id="columnas" class="col-md-12 col-xs-12 form_new">
@@ -16,8 +8,14 @@
 					<div class="campos">
 						<!--Nombre del ingrediente-->
 						<%= f.label :Nombre  %>
-						<%=  f.text_field :name, :placeholder => "Nombre alimento" %>
+						<%=  f.text_field :name, :placeholder => "Nombre alimento", id: "contenido" %>
 					</div>
+
+					<div class="campos">
+					<!--Categoria a la que pertenece la receta-->
+					<%= f.label :Nombre %>
+					<%= f.select :name, Food.all.collect {|f| [f.name]} %>
+				</div>
 						
 					<div class="campos">
 						<!--Cantidad necesaria-->
@@ -37,5 +35,3 @@
 			</div>
 		</div>
 </div>
-</body>
-</html>

@@ -32,15 +32,10 @@ class FoodsController < ApplicationController
 		end	
 	end
 
-	def food_subtracts
-		@difference_food = Food.find params[:id]
-		render 'show'
-	end
-
 	private
 	#este metodo es necesario para que al crear un objeto se autorice su creacion porque si no podrian meternos codigo malicioso
 	def food_params
-		params.require(:food).permit(:name, :existing_amount)
+		params.require(:food).permit(:name, :existing_amount, :unit_of_measure, :image)
 		
 	end
 end

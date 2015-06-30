@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="menu_style.css">
-        <title>Menu Generator</title>
-    </head>
 
-    <body>
 	<div class="container-fluid barra">
     	<nav class="navbar navbar-default borde_barra">
   	
@@ -31,8 +23,7 @@
       <div class="navbar-form navbar-left" role="search">
        <%= form_tag(search_foods_path, method: 'get') do %> 
        <div class="form-group">
-          <%= text_field_tag :search, params[:search], :placeholder => "Buscar", 
-          class: "form-control" %>
+          <%= text_field_tag :search, params[:search], :placeholder => "Buscar", id: "contenido", class: "form-control" %>
         </div>
         <%= submit_tag 'Buscar', class: "btn btn-default" %>
      	 <% end %>
@@ -61,7 +52,7 @@
               		<li class="col-md-3 col-xs-3" type="none">
                     <div class=" zoom_f">
                       <%= link_to food_path(food) do %>
-              			<%= image_tag food.image, :class => 'img_foods zoom_f' %>
+              			<%= image_tag food.image, :class => 'img_foods' %>
                     <% end %>
                   </div>
               			<%= link_to (food.name), food_path(food) %>
@@ -81,6 +72,4 @@
 	<%= link_to 'New food', new_food_path %>
 </p>
 -->
-</body>
-</html>
 

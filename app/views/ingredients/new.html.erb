@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="menu_style.css">
-        <title>Menu Generator</title>
-    </head>
-
-    <body>
-    	<div class="container containerfirst">
+<div class="container containerfirst">
           <div class="row rowfirst">
             <div id="columnas" class="col-md-12 col-xs-12 form_new">
 				<fieldset>
@@ -16,20 +7,23 @@
 						<p class="nombres_recipes">Receta: <%= @recipe.name %></p>
 						<div class="campos">
 							<!--Nombre del ingrediente-->
-							<%= f.label :food_id %>
-							<%= f.text_field :food_id %>
+							<%= f.label :Ingrediente %>
+							<!--<%= select_tag :food_id %>-->
+							
+							<%= select_tag "ingredient[food_id]", options_from_collection_for_select(@ingredients, 'id', 'name' )%>
+					
 						</div>
 
 						<div class="campos">
 							<!--Cantidad necesaria-->
-							<%= f.label :necessary_amount %>
-							<%= f.text_field :necessary_amount %>
+							<%= f.label :Cantidad_necesaria %>
+							<%= f.text_field :necessary_amount, :placeholder => "Cantidad necesaria" %>
 						</div>
 
 						<div class="campos">
 							<!--Unidad de medida-->
 							<%= f.label :Unidad_de_medida %>
-							<%= f.text_field :necessary_amount %>
+						<%= f.text_field :unit_of_measure, :placeholder => "kg, gr, l" %>
 						</div>
 							
 							<%= f.submit 'Guardar' %>
@@ -42,5 +36,3 @@
 			</div>
 		</div>
 </div>
-</body>
-</html>

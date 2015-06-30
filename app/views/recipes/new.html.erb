@@ -1,44 +1,80 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="menu_style.css">
-        <title>Menu Generator</title>
-    </head>
 
-    <body>
 <div class="container containerfirst">
-          <div class="row rowfirst">
-            <div id="columnas" class="col-md-12 col-xs-12 form_new">
-				<fieldset>
-					<legend>Nueva Receta</legend>
-					
-					<%= form_for @recipe do |f| %>
-					<div class="campos">
-						<!--Nombre de la receta-->
-						<%= f.label :Nombre %>
-						<%=  f.text_field :name, :size => 30, :placeholder => "Nombre de la receta" %>
-					</div>
+      <div class="row rowfirst">
+        <div id="columnas" class="col-md-12 col-xs-12 form_new">
+			<fieldset>
+				<legend>Nueva Receta</legend>
+				
+				<%= form_for @recipe do |f| %>
+				<div class="campos">
+					<!--Nombre de la receta-->
+					<%= f.label :Nombre %>
+					<%=  f.text_field :name, :size => 30, :placeholder => "Nombre de la receta", id: "contenido" %>
+				</div>
 
-					<div class="campos">
-						<!--Categoria a la que pertenece la receta-->
-						<%= f.label :Categoria %>
-						<%= f.select :category, options_for_select(["Primeros", "Segundos", "Postres"]), {:id => "select1"} %>
-					</div>
+				<div class="campos">
+					<!--Categoria a la que pertenece la receta-->
+					<%= f.label :Categoria %>
+					<%= f.select :category, options_for_select(["Selecciona", "Primeros", "Segundos", "Postres"]), {:id => "select1"} %>
+				</div>
 
-					<div class="campos">
-						<!--Preparacion-->
-						<%= f.label :Preparación %>
-						<br>
-						<%= f.text_area :preparation, size: '40x5', :placeholder => "Preparación de la receta..." %>
-					</div>
-					<div class="boton">
-							<%= f.submit 'Guardar' %>
-					</div>
-					<% end %>
-				</fieldset>
-			</div>
+				<div class="campos">
+					<!--Nombre de la receta-->
+					<%= f.label :Tiempo_de_preparación %>
+					<%=  f.text_field :preparation_time, :size => 17, :placeholder => "Tiempo de preparación" %>
+				</div>
+
+				<div class="campos">
+					<!--Nombre de la receta-->
+					<%= f.label :Tiempo_de_cocción %>
+					<%=  f.text_field :cooking_time, :size => 17, :placeholder => "Tiempo de cocción" %>
+				</div>
+
+				<div class="campos">
+					<!--Nombre de la receta-->
+					<%= f.label :Número_de_raciones %>
+					<%=  f.text_field :number_of_people, :size => 17, :placeholder => "Raciones" %>
+				</div>
+
+				<div class="campos">
+					<!--Nombre de la receta-->
+					<%= f.label :Dificultad %> &nbsp;&nbsp;
+					<%= radio_button("recipe", "difficulty", "facil") %>&nbsp;<%= f.label :facil %>&nbsp;
+						<%= radio_button("recipe", "difficulty", "medio") %>&nbsp;<%= f.label :medio %>&nbsp;
+						<%= radio_button("recipe", "difficulty", "dificil") %>&nbsp;<%= f.label :dificil %>
+				</div>
+				<!--
+				<div class="campos">
+					Nombre de la receta
+					<%= f.label :Imagen %>
+					<%= f.text_field :image, :size => 17, :placeholder => "URL imagen" %>
+				</div>
+			-->
+				
+
+				<!--
+				<input type="button" id="addingredients" value="Añadir ingredientes" style="font-size:14px;cursor:pointer;margin:15px;padding:5px;"/>
+
+				<div id="divmostoc" class="campos" style="display:none;">
+						<%= label_tag :Ingrediente %><br>
+						<%= select_tag :food_id %>
+						<%= text_field_tag :necessary_amount %>
+						<%= text_field_tag :unit_of_measure, "kg, gr, l", size: 10 %>
+					<%= text_field_tag :unit_of_measure, params[:unit_of_measure], :placeholder => "kg, gr, l", size: "10" %>
+				</div>
+				-->
+
+				<div class="campos">
+					<!--Preparacion-->
+					<%= f.label :Preparación %>
+					<br>
+					<%= f.text_area :preparation, size: '40x5', :placeholder => "Preparación de la receta..." %>
+				</div>
+				<div class="boton">
+						<%= f.submit 'Guardar' %>
+				</div>
+				<% end %>
+			</fieldset>
 		</div>
+	</div>
 </div>
-</body>
-</html>

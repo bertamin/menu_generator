@@ -1,8 +1,10 @@
-footer{
-	width: 98%;
+.color{width: 100%;
 	font-size: 10px;
 	text-align: center;
 	padding-left: 25px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-}
+	background-color: #F8F8F8;
+	margin-top: -19px;
+	padding: 10px;}
+footer{margin-top: 47px;}
