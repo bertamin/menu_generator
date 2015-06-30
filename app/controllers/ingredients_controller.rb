@@ -21,7 +21,12 @@ class IngredientsController < ApplicationController
 	def create
 
 		@recipe = Recipe.find params[:recipe_id]
+<<<<<<< HEAD
 		@ingredient = @recipe.ingredients.new ingredient_params
+=======
+		@food = Food.find_by_name(name)
+		@ingredient = @recipe.ingredients.new(food_id, necessary_amount, unit_of_measure) 
+>>>>>>> bfea5f99cd42563e7ec4c4bc0e9c55e8de9077bf
 		if @ingredient.save
 			flash[:notice] = "Ingredients created sucesfully"
 			flash[:alert] = "Ingredients is not created correctly"

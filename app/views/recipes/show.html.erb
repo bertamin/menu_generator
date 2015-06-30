@@ -73,6 +73,7 @@
 
         <div class="formato_propiedades_recipes">Número de raciones: <span class="contenido_propiedades_recipes"><%= @recipe.number_of_people %></span></div>
 
+<<<<<<< HEAD
         <div class="formato_propiedades_recipes">Dificultad: <span class="contenido_propiedades_recipes">
           <%= @recipe.difficulty %></span></div>
 
@@ -81,6 +82,15 @@
           <% @ingredients.each do |ingredient| %>
             <li class="contenido_propiedades_recipes lista_ingredientes" type="none">
               <%= ingredient.necessary_amount %> 
+=======
+        <div class="formato_propiedades_recipes">Dificultad: <span class="contenido_propiedades_recipes"><%= @recipe.difficulty %></span></div>
+
+				<div class="formato_propiedades_recipes">Ingredientes:</div>
+				<ul>
+					<% @ingredients.each do |ingredient| %>
+						<li class="contenido_propiedades_recipes lista_ingredientes" type="none">
+							<%= ingredient.necessary_amount %> 
+>>>>>>> bfea5f99cd42563e7ec4c4bc0e9c55e8de9077bf
               <%= ingredient.unit_of_measure %>
 					
 							<%= ingredient.get_food_name %>
@@ -105,12 +115,16 @@
               <button type="button" class="btn btn-default btn-md color_boton">
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <%= link_to 'Añadir ingredientes', new_recipe_ingredient_path(@recipe) %> 
               </button>
+<<<<<<< HEAD
             </div>
 
             <div class="navbar-form navbar-right hacer_receta"> 
                <button type="button" class="btn btn-default btn-md color_boton">
               <span class="" aria-hidden="true"></span> <%= link_to 'Que aproveche' %> 
               </button>
+=======
+>>>>>>> bfea5f99cd42563e7ec4c4bc0e9c55e8de9077bf
             </div>
+
 		</div>
 </div>

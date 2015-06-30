@@ -12,4 +12,11 @@ class Food < ActiveRecord::Base
         where(query)
     end
 
+<<<<<<< HEAD
+=======
+    def food_subtracts
+    	
+
+    end
+>>>>>>> bfea5f99cd42563e7ec4c4bc0e9c55e8de9077bf
 end

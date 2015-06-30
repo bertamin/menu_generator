@@ -8,10 +8,14 @@
 						<div class="campos">
 							<!--Nombre del ingrediente-->
 							<%= f.label :Ingrediente %>
+<<<<<<< HEAD
 							<!--<%= select_tag :food_id %>-->
 							
 							<%= select_tag "ingredient[food_id]", options_from_collection_for_select(@ingredients, 'id', 'name' )%>
 					
+=======
+							<%= f.text_field :food_id %>
+>>>>>>> bfea5f99cd42563e7ec4c4bc0e9c55e8de9077bf
 						</div>
 
 						<div class="campos">

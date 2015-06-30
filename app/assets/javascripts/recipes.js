@@ -3,6 +3,7 @@
 
 
 $(document).ready(function() {
+<<<<<<< HEAD
 	$('#addingredients').click(function() {
 		$('#divmostoc').slideToggle(500);
 	});
@@ -22,3 +23,9 @@ $(document).ready(function() {
               $(this).val('Buscar...');
       });
 });*/
+=======
+$('#addingredients').click(function() {
+$('#divmostoc').slideToggle(2500);
+});
+});
+>>>>>>> bfea5f99cd42563e7ec4c4bc0e9c55e8de9077bf

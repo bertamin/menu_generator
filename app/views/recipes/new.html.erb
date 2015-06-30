@@ -9,7 +9,11 @@
 				<div class="campos">
 					<!--Nombre de la receta-->
 					<%= f.label :Nombre %>
+<<<<<<< HEAD
 					<%=  f.text_field :name, :size => 30, :placeholder => "Nombre de la receta", id: "contenido" %>
+=======
+					<%=  f.text_field :name, :size => 30, :placeholder => "Nombre de la receta" %>
+>>>>>>> bfea5f99cd42563e7ec4c4bc0e9c55e8de9077bf
 				</div>
 
 				<div class="campos">
@@ -47,6 +51,7 @@
 				<div class="campos">
 					Nombre de la receta
 					<%= f.label :Imagen %>
+<<<<<<< HEAD
 					<%= f.text_field :image, :size => 17, :placeholder => "URL imagen" %>
 				</div>
 			-->
@@ -63,6 +68,23 @@
 					<%= text_field_tag :unit_of_measure, params[:unit_of_measure], :placeholder => "kg, gr, l", size: "10" %>
 				</div>
 				-->
+=======
+					<%=  f.text_field :image, :size => 17, :placeholder => "URL imagen" %>
+				</div>
+			-->
+				
+				<input type="button" id="addingredients" value="Añadir ingredientes" style="font-size:14px;cursor:pointer;margin:15px;padding:5px;"/>
+
+				
+				<div id="divmostoc" class="campos" style="display:none;">
+						<%= label_tag :Ingrediente %><br>
+						<%= text_field_tag :food_id, "Ingrediente", size: 10 %>
+						<%= text_field_tag :necessary_amount, "Cant necesaria", size: 10 %>
+						<%= text_field_tag :unit_of_measure, "kg, gr, l", size: 10 %>
+					
+				</div>
+
+>>>>>>> bfea5f99cd42563e7ec4c4bc0e9c55e8de9077bf
 
 				<div class="campos">
 					<!--Preparacion-->
